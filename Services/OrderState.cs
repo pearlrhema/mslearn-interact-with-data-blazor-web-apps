@@ -38,4 +38,10 @@ public class OrderState
     {
         Order.Pizzas.Remove(pizza);
     }
+
+    // This method is used to reset the order after it has been submitted
+    public void ResetOrder()
+    {
+        Order = new Order();
+    }
 }

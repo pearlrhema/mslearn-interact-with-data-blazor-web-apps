@@ -1,12 +1,13 @@
 @page "/"
+
 @inject HttpClient HttpClient
 @inject NavigationManager NavigationManager
 
 @using BlazingPizza.Services
 @inject OrderState OrderState
 
+
 <div class="main">
-    <h1>Blazing Pizzas</h1>
     <ul class="pizza-cards">
     @if (specials != null)
     {
@@ -56,7 +57,7 @@
 
     <div class="order-total @(order.Pizzas.Any() ? "" : "hidden")">
         Total:
-        <span class="total-price">@order.GetFormattedTotalPrice()</span>
+        <span class="total-price">₦@order.GetFormattedTotalPrice()</span>
         <a href="checkout" class="@(OrderState.Order.Pizzas.Count == 0 ? "btn btn-warning disabled" : "btn btn-warning")">
             Order >
         </a>
